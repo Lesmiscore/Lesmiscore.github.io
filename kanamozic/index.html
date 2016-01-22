@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Kanamozic Demonstration</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="http://nao20010128nao.github.io/kanamozic/base64_utf8.js"></script>
+    <script type="text/javascript" src="http://nao20010128nao.github.io/kanamozic/kanamozic.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("textarea#plain").text("日本語");
+            $("button#encode").click(function () {
+                var text = $("textarea#plain").val();
+                var encoded = Kanamozic.encode(text, 0);
+                $("textarea#encoded").text(encoded);
+            });
+            $("button#decode").click(function () {
+                var text = $("textarea#encoded").val();
+                var decoded = Kanamozic.decode(text, 0);
+                $("textarea#plain").text(decoded);
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>Plain Text:</p>
+    <textarea id="plain">日本語</textarea>
+    <br />
+    <button id="encode">↓ENCODE</button>
+    <button id="decode">↑DECODE</button>
+    <p>Encoded Text:</p>
+    <textarea id="encoded"></textarea>
+</body>
+</html>
