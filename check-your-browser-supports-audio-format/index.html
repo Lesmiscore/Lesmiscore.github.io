@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Check your browser supports audio formats</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function () {
+            try {
+                var audio = new Audio("");
+                if (audio.canPlayType) {
+                    $("#sup_4").text("Status: " + (("" != audio.canPlayType("audio/mp4")) ? "Supported" : "Not supported"));
+                    $("#sup_5").text("Status: " + (("" != audio.canPlayType("audio/mp3")) ? "Supported" : "Not supported"));
+                    $("#sup_6").text("Status: " + (("" != audio.canPlayType("audio/ogg")) ? "Supported" : "Not supported"));
+                    $("#sup_7").text("Status: " + (("" != audio.canPlayType("audio/vnd.wave")) ? "Supported" : "Not supported"));
+                    $("#sup_8").text("Status: " + (("" != audio.canPlayType("audio/x-ms-wma")) ? "Supported" : "Not supported"));
+                } else {
+                    $("#sup_4").text("Status: Cannot check the status");
+                    $("#sup_5").text("Status: Cannot check the status");
+                    $("#sup_6").text("Status: Cannot check the status");
+                    $("#sup_7").text("Status: Cannot check the status");
+                    $("#sup_8").text("Status: Cannot check the status");
+                }
+            } catch (e) {
+                $("#sup_4").text("Status: Audio is not supported");
+                $("#sup_5").text("Status: Audio is not supported");
+                $("#sup_6").text("Status: Audio is not supported");
+                $("#sup_7").text("Status: Audio is not supported");
+                $("#sup_8").text("Status: Audio is not supported");
+            }
+        });
+    </script>
+</head>
+<body>
+    <!--Unsupported formats on the web.
+        You can download them to use on your PC!-->
+    <!--
+     <p>AC3</p>
+     <audio controls loop id="audio_1">
+         <source src="ac3.ac3" type="application/octet-stream" />
+     </audio><br />
+
+     <p>AIFF</p>
+     <audio controls loop id="audio_2">
+         <source src="aiff.aiff" type="application/octet-stream" />
+     </audio><br />
+
+     <p>FLAC</p>
+     <audio controls loop id="audio_3">
+         <source src="flac.flac" type="application/octet-stream" />
+     </audio><br />
+    -->
+
+    <div>M4A</div><div id="sup_4">Status: Enable Javascript to check.</div>
+    <audio controls loop id="audio_4">
+        <source src="m4a.m4a" type="audio/mp4" />
+    </audio><hr />
+
+    <div>MP3</div><div id="sup_5">Status: Enable Javascript to check.</div>
+    <audio controls loop id="audio_5">
+        <source src="mp3.mp3" type="audio/mp3" />
+    </audio><hr />
+
+    <div>OGG</div><div id="sup_6">Status: Enable Javascript to check.</div>
+    <audio controls loop id="audio_6">
+        <source src="ogg.ogg" type="audio/ogg" />
+    </audio><hr />
+
+    <div>WAV</div><div id="sup_7">Status: Enable Javascript to check.</div>
+    <audio controls loop id="audio_7">
+        <source src="wav.wav" type="audio/vnd.wave" />
+    </audio><hr />
+
+    <div>WMA</div><div id="sup_8">Status: Enable Javascript to check.</div>
+    <audio controls loop id="audio_8">
+        <source src="wma.wma" type="audio/x-ms-wma" />
+    </audio><hr />
+</body>
+</html>
