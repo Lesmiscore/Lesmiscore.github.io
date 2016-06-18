@@ -1,0 +1,14 @@
+[Adblock Plus 2.3.1]
+! Homepage: https://nao20010128nao.github.io/
+! Title: nao20010128nao's filter
+! Expires: 6 hours
+! Version: 2016-06-19
+jump.2ch.net##div[style="width:100%;text-align:right"]
+gamepedia.com###siderail
+||free2.jp/2ch_big/
+||parts.jbbs.shitaraba.net/img/banner/banner_approach.jpg
+||sda.seesaa.jp/file/*
+||ecx.images-amazon.com/images/*
+##a[href^="http://www.amazon.co.jp/"]
+shitaraba.net##table[width="640"]
+jbbs.shitaraba.net###jlisting_ad
