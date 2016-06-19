@@ -12,3 +12,10 @@ gamepedia.com###siderail
 ##a[href^="http://www.amazon.co.jp/"]
 shitaraba.net##table[width="640"]
 jbbs.shitaraba.net###jlisting_ad
+jin115.com##div#sponsered
+jin115.com##div#side_left
+jin115.com##div#sidetitle
+##table.acr_ranking_sys
+##script[src^="http://rranking4.ziyu.net/js/"]
+##a[href="http://www.ziyu.net/"]
+jin115.com##.jin-ads
