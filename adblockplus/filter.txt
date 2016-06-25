@@ -46,3 +46,9 @@ www.yahoo.co.jp###cmprikunabi
 www.yahoo.co.jp###cmpbb
 www.yahoo.co.jp###cmpbiz
 www.yahoo.co.jp###cmp1st
+||stab.thench.net/threads/thread_top_left_300x250
+||stab.thench.net/threads/rightside_top_160x600
+||stab.thench.net/threads/thread_top_right_300x250
+2ch.net##div#js--banners--thread
+2ch.net##[class^="js--ad--"]
+2ch.net##[class^="ad--"]
