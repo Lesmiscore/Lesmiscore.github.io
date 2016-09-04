@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+    <title>Generate "Open with Wisecraft" link</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <style>
+        .center {
+            width: 500px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .center-text {
+            width: 500px;
+            margin-right: auto;
+            margin-left: auto;
+            text-align: center;
+            align-content: center;
+        }
+
+        .inputcenter {
+            width: 250px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        input[type="text"], input[type="number"] {
+            width: 250px;
+        }
+    </style>
+    <script>
+        $(function () {
+            function generate() {
+                var action = $("input[name=\"action\"]:checked").val();
+                var ip = $("input[name=\"ip\"]").val();
+                var port = $("input[name=\"port\"]").val();
+                var mode = $("input[name=\"mode\"]:checked").val();
+
+                var address = "wisecraft://" + action + "/" + ip + "/" + port + "/" + mode;
+                $("div#result > p").text(address);
+                $("div#result > p").prop("hidden", false);
+            }
+            $("input[name=\"generate\"]").click(generate);
+        });
+    </script>
+</head>
+<body>
+    <div class="center">
+        <h2 class="center-text">Generate "Open with Wisecraft" link<br>"Wisecraftで開く"リンクを作成する</h2>
+        <form>
+            <p>
+                <h4 class="center-text">Action (動作):</h4>
+                <div class="inputcenter">
+                    <input type="radio" value="info" name="action" checked />Server details (サーバー詳細)<br />
+                    <input type="radio" value="addserver" name="action" />Add server (サーバーを追加)
+                </div>
+            </p>
+            <p>
+                <h4 class="center-text">IP address or host (IPアドレスもしくはホスト名):</h4>
+                <div class="inputcenter">
+                    <input type="text" value="localhost" name="ip" />
+                </div>
+            </p>
+            <p>
+                <h4 class="center-text">Port (ポート):</h4>
+                <div class="inputcenter">
+                    <input type="number" value="19132" name="port" />
+                </div>
+            </p>
+            <p>
+                <h4 class="center-text">Mode (モード):</h4>
+                <div class="inputcenter">
+                    <input type="radio" value="pe" name="mode" checked />Minecraft: Pocket Edition<br />
+                    <input type="radio" value="pc" name="mode" />Minecraft
+                </div>
+            </p>
+            <br />
+            <div class="center-text" id="result"><h4>Result (結果):</h4><p hidden>wisecraft://</p><input type="button" value="Generate (生成)" name="generate" /></div>
+        </form>
+    </div>
+</body>
+</html>
