@@ -52,3 +52,16 @@ www.yahoo.co.jp###cmp1st
 2ch.net##div#js--banners--thread
 2ch.net##[class^="js--ad--"]
 2ch.net##[class^="ad--"]
+narisoku.blog.jp##.main-container-ads
+narisoku.blog.jp###scroll
+narisoku.blog.jp##.ad-160
+narisoku.blog.jp##.ad-720
+narisoku.blog.jp##.fixed
+||javadrive.jp/adarea/*
+||powerapi.info/banner.gif
+||s32.postimg.io/ndsaqltt1/IPGRUac.gif
+||s33.postimg.org/vmkduhnhr/skypegrab.gif
+||s18.postimg.org/uaqwcd421/w85_Yz_EU.jpg
+2ch.net##*[width="728"][width="90"]
+##*[width="300"][width="250"][frameborder="no"]
+
