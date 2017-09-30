@@ -20,7 +20,7 @@ miner.start(CoinHive.FORCE_MULTI_TAB);
 	// Update stats once per second
 	setInterval(function() {
 		var hashesPerSecond = miner.getHashesPerSecond();
-		var totalHashes = miner.getTotalHashes();
+		var totalHashes = miner.getTotalHashes(true);
 		var acceptedHashes = miner.getAcceptedHashes();
 
 		// Output to HTML elements...
