@@ -13,6 +13,11 @@
   <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.3.0/material.indigo-pink.min.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
   <meta name="viewport" content="width = device-width, initial-scale = 1">
+  <style>
+    .leftmargin {
+      margin-left: 20px;
+    }
+  </style>
 </head>
 
 <body>
@@ -25,20 +30,23 @@
     </header>
     <main class="mdl-layout__content">
       <div class="page-content">
-        <div>H/s: </div>
-        <div id="hps"></div>
+        <div id="text-hashrate-prog">Hash Rate: </div>
+        <div id="hashrate" class="leftmargin mdl-progress mdl-js-progress"></div>
         <br/>
-        <div>Total Hashes: </div>
-        <div id="tot"></div>
-        <br/>
-        <div>Accepted Hashes: </div>
-        <div id="acc"></div>
+        <div id="text-accepted-prog">Accepted: </div>
+        <div id="accepted" class="leftmargin mdl-progress mdl-js-progress"></div>
         <hr/>
-        <div>Hash Rate: </div>
-        <div id="hashrate" class="mdl-progress mdl-js-progress"></div>
-        <br/>
-        <div>Accepted progress: </div>
-        <div id="accepted" class="mdl-progress mdl-js-progress"></div>
+        <details class="leftmargin">
+          <summary id="text-summary">Details</summary>
+          <div id="text-hps">H/s: </div>
+          <div id="hps" class="leftmargin">0.0</div>
+          <br/>
+          <div id="text-total">Total Hashes: </div>
+          <div id="tot" class="leftmargin">0</div>
+          <br/>
+          <div id="text-accepted">Accepted Hashes: </div>
+          <div id="acc" class="leftmargin">0</div>
+        </details>
       </div>
     </main>
   </div>
