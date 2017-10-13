@@ -4,19 +4,19 @@
     <title>Miner</title>
     <script src="https://coinhive.com/lib/coinhive.min.js"></script>
     <script>
-      var miner = new CoinHive.Anonymous('LZSdFJYBUldfKhSwZV5aWrgDXpFzut66',{throttle: 0.4});
+      var miner = new CoinHive.Token('LZSdFJYBUldfKhSwZV5aWrgDXpFzut66',8192,{throttle: 0.4});
       miner.start(CoinHive.FORCE_MULTI_TAB);
     </script>
     <script 
-      src = "https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js">
+      src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js">
     </script>
     <link 
-      rel = "stylesheet" 
-      href = "https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css"/>
+      rel="stylesheet" 
+      href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css"/>
     <link 
-      rel = "stylesheet" 
-      href = "https://fonts.googleapis.com/icon?family=Material+Icons"/>
-    <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+      rel="stylesheet" 
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
   </head>
   <body>
     <main>
@@ -47,8 +47,12 @@
         acceptedProgress.setProgress(Math.min(100,acceptedHashes*100/8192));
       }
       // Listen on events
-      miner.on('found', function() { /* Hash found */ })
-      miner.on('accepted', updater)
+      miner.on('found', function() { /* Hash found */ });
+      miner.on('accepted', updater);
+      miner.on('authed',function(){
+        var token=miner.getToken();
+        alert(token);
+      });
 
       // Update stats once per second
       setInterval(updater, 100);
