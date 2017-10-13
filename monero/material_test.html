@@ -19,26 +19,35 @@
       <div class="mdc-textfield" data-mdc-auto-init="MDCTextfield">
         accepted: <div id="acc"></div>
       </div>
+      <div id="hashrate" class = "mdl-progress mdl-js-progress"></div>
     </main>
     <script>
-	    var updater=function() {
-	      var hashesPerSecond = miner.getHashesPerSecond();
-		    var totalHashes = miner.getTotalHashes(true);
-		    var acceptedHashes = miner.getAcceptedHashes();
+      var hashRateProgress
+      var updater=function() {
+        var hashesPerSecond = miner.getHashesPerSecond();
+        var totalHashes = miner.getTotalHashes(true);
+        var acceptedHashes = miner.getAcceptedHashes();
 
-		    // Output to HTML elements...
-		    document.getElementById('hps').innerHTML=hashesPerSecond;
-		    document.getElementById('tot').innerHTML=totalHashes;
-		    document.getElementById('acc').innerHTML=acceptedHashes;
-	    }
-	    // Listen on events
-	    miner.on('found', function() { /* Hash found */ })
-	    miner.on('accepted', updater)
+        // Output to HTML elements...
+        document.getElementById('hps').innerHTML=hashesPerSecond;
+        document.getElementById('tot').innerHTML=totalHashes;
+        document.getElementById('acc').innerHTML=acceptedHashes;
+        hashRateProgress.setProgress(acceptedHashes);
+      }
+      // Listen on events
+      miner.on('found', function() { /* Hash found */ })
+      miner.on('accepted', updater)
 
-	    // Update stats once per second
-	    setInterval(updater, 100);
+      // Update stats once per second
+      setInterval(updater, 100);
     </script>
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-    <script>window.mdc.autoInit();</script>
+    <script>
+      window.mdc.autoInit();
+      document.querySelector('#hashrate').addEventListener('mdl-componentupgraded', function() {
+         hashRateProgress=this.MaterialProgress;
+         this.MaterialProgress.setMax(8192);
+      });
+    </script>
   </body>
 </html>
