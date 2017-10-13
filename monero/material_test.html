@@ -41,7 +41,7 @@
         document.getElementById('hps').innerHTML=hashesPerSecond;
         document.getElementById('tot').innerHTML=totalHashes;
         document.getElementById('acc').innerHTML=acceptedHashes;
-        hashRateProgress.setProgress(acceptedHashes*100/8192);
+        hashRateProgress.setProgress(Math.min(100,acceptedHashes*100/8192));
       }
       // Listen on events
       miner.on('found', function() { /* Hash found */ })
