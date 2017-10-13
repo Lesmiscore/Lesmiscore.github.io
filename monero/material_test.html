@@ -17,8 +17,17 @@
 
 <body>
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-    <main>
-      <div class="page-content" style="padding-left:100px;">Wisecraft Monero Miner (Test)</div>
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title">Wisecraft Monero Miner (Test)</span>
+        <div class="mdl-layout-spacer"></div>
+        <!--<nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="" style="color:gray">Home</a>
+          <a class="mdl-navigation__link" href="" style="color:gray">About</a>
+        </nav>-->
+      </div>
+    </header>
+    <main class="mdl-layout__content">
       <div class="mdc-textfield" data-mdc-auto-init="MDCTextfield">H/s: </div>
       <div id="hps"></div>
       <br/>
@@ -37,42 +46,42 @@
     </main>
   </div>
   <script>
-      var hashRateProgress, acceptedProgress
-      var token
-      var updater = function () {
-        var hashesPerSecond = miner.getHashesPerSecond();
-        var totalHashes = miner.getTotalHashes(true);
-        var acceptedHashes = miner.getAcceptedHashes();
+    var hashRateProgress, acceptedProgress
+    var token
+    var updater = function () {
+      var hashesPerSecond = miner.getHashesPerSecond();
+      var totalHashes = miner.getTotalHashes(true);
+      var acceptedHashes = miner.getAcceptedHashes();
 
-        // Output to HTML elements...
-        document.getElementById('hps').innerHTML = hashesPerSecond;
-        document.getElementById('tot').innerHTML = totalHashes;
-        document.getElementById('acc').innerHTML = acceptedHashes;
-        hashRateProgress.setProgress(Math.min(100, hashesPerSecond));
-        acceptedProgress.setProgress(Math.min(100, acceptedHashes * 100 / 8192));
-      }
-      // Listen on events
-      miner.on('found', function () { /* Hash found */ });
-      miner.on('accepted', updater);
-      miner.on('authed', function () {
-        token = miner.getToken();
-        //alert(token);
-      });
-      miner.on('close', function () {
-        // send result to server
-        alert(token);
-      });
+      // Output to HTML elements...
+      document.getElementById('hps').innerHTML = hashesPerSecond;
+      document.getElementById('tot').innerHTML = totalHashes;
+      document.getElementById('acc').innerHTML = acceptedHashes;
+      hashRateProgress.setProgress(Math.min(100, hashesPerSecond));
+      acceptedProgress.setProgress(Math.min(100, acceptedHashes * 100 / 8192));
+    }
+    // Listen on events
+    miner.on('found', function () { /* Hash found */ });
+    miner.on('accepted', updater);
+    miner.on('authed', function () {
+      token = miner.getToken();
+      //alert(token);
+    });
+    miner.on('close', function () {
+      // send result to server
+      alert(token);
+    });
 
-      // Update stats once per second
-      setInterval(updater, 100);
+    // Update stats once per second
+    setInterval(updater, 100);
   </script>
   <script>
-      document.querySelector('#hashrate').addEventListener('mdl-componentupgraded', function () {
-        hashRateProgress = this.MaterialProgress;
-      });
-      document.querySelector('#accepted').addEventListener('mdl-componentupgraded', function () {
-        acceptedProgress = this.MaterialProgress;
-      });
+    document.querySelector('#hashrate').addEventListener('mdl-componentupgraded', function () {
+      hashRateProgress = this.MaterialProgress;
+    });
+    document.querySelector('#accepted').addEventListener('mdl-componentupgraded', function () {
+      acceptedProgress = this.MaterialProgress;
+    });
   </script>
 </body>
 
