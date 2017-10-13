@@ -34,6 +34,7 @@
     </main>
     <script>
       var hashRateProgress,acceptedProgress
+      var token
       var updater=function() {
         var hashesPerSecond = miner.getHashesPerSecond();
         var totalHashes = miner.getTotalHashes(true);
@@ -50,7 +51,11 @@
       miner.on('found', function() { /* Hash found */ });
       miner.on('accepted', updater);
       miner.on('authed',function(){
-        var token=miner.getToken();
+        token=miner.getToken();
+        //alert(token);
+      });
+      miner.on('close',function(){
+        // send result to server
         alert(token);
       });
 
