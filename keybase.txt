@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/nao20010128nao
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://nao20010128nao.github.io
+  * I am nao20010128nao (https://keybase.io/nao20010128nao) on keybase.
+  * I have a public key ASBL4WxtEay7nw6bKGvqfNwCh_2Ai5Qp4PgAdR40aJpeuwo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01204be16c6d11acbb9f0e9b286bea7cdc0287fd808b9429e0f800751e34689a5ebb0a",
+      "host": "keybase.io",
+      "kid": "01204be16c6d11acbb9f0e9b286bea7cdc0287fd808b9429e0f800751e34689a5ebb0a",
+      "uid": "a3c346e8c68f8e17229df84b945e4019",
+      "username": "nao20010128nao"
+    },
+    "merkle_root": {
+      "ctime": 1618550187,
+      "hash": "185e4f54862894b8f7db488823e0c1c105c9223b0101ba98f847db4c1049a00eb07b3e6828e5850d43f09953d1fadc6bb65a8656c6d5287438c4ce3f66a30f80",
+      "hash_meta": "5dfd98c311c53f3ef2f13e17395fccdd29a90237945b54e20a3b0bd137211bb7",
+      "seqno": 19647160
+    },
+    "service": {
+      "entropy": "ViWUxWtQP/VJHIt1McLJydj7",
+      "hostname": "nao20010128nao.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.6.1"
+  },
+  "ctime": 1618550205,
+  "expire_in": 504576000,
+  "prev": "913ab2c421a9090a156bd60af81486833ed3a2525133d272c05322d49d8d5fbd",
+  "seqno": 32,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgS+FsbRGsu58Omyhr6nzcAof9gIuUKeD4AHUeNGiaXrsKp3BheWxvYWTESpcCIMQgkTqyxCGpCQoVa9YK+BSGgz7TolJRM9JywFMi1J2NX73EIEH3WoekIQViWUGuBkrbMrI8W3bbsQDcA8XnhKft98UKAgHCo3NpZ8RAsehtr7JjNEXg4o5KiO7096IL1SvRfzc7LJ1vxGu3N8RiyRRkQlZhSMIZFdQIk5yA/jwN6PeqYzurFaB2kIp0BKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIGdTAJ6MxKPF+Q0J7lLgvkEEYFxJ+eXRY52gDS65JRL0o3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/nao20010128nao
+
+==================================================================
